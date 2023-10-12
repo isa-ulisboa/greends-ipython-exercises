@@ -33,7 +33,7 @@ def main():
         else:
             break
 
-# returns -1 if EOFError is raised
+# returns -1 if EOFError is raised, otherwise returns option's price
 def get_option_from_user():
     while True:
         try:
