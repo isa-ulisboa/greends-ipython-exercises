@@ -1,11 +1,3 @@
-#courses=["fads","dms","ipython"]
-
-import json
-import requests
-import sys
-
-if len(sys.argv) != 2:
-    sys.exit()
-
-response = requests.get("https://itunes.apple.com/search?entity=song&limit=1&term=" + sys.argv[1])
-print(json.dumps(response.json(), indent=2))
+courses=["fads","dms","ipython"]
+result=courses.pop(2)
+print(result,courses)
