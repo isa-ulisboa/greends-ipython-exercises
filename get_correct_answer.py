@@ -1,4 +1,5 @@
 # asks for input and counts number of tries until the input is an integer and matches N
+# 
 def get_correct_answer(message,N,max_tries):
         tries=0
         while tries<max_tries:
