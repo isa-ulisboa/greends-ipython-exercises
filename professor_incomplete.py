@@ -33,7 +33,7 @@ def generate_prompt(level):
     return prompt, correct_answer
 
 # input: integer (level)
-# output: integer (non-negative random number between 0 and 9, or between 10 and 99 or between 100 and 999)
+# output: integer (random number between 0 and 9, or between 10 and 99 or between 100 and 999)
 def generate_integer(level):
     ...
 
