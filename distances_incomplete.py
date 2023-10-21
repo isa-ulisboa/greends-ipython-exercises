@@ -44,18 +44,21 @@ def plot_scatter(points: dict):
 
 # input: string (prompt to user), float (minimum value for input), float (maximum value for input)
 # output: float (user's provided value between minimum and maximum)
+# side effect: keeps asking for input until the user provides a valid input
 def get_decimal(prompt: str,Min: float, Max: float) -> float:
     ...
                 return x
 
 # input: string (prompt to user), integer (minimum value for input), integer (maximum value for input)
 # output: integer (user's provided value between minimum and maximum)
+# side effect: keeps asking for input until the user provides a valid input
 def get_integer(prompt: str,Min: int, Max: int) -> int:
     ...
                 return x
 
 # input: string (prompt to user), list (list of strings that are acceptable values)
 # output: string (user's provided value among the values in L)
+# side effect: keeps asking for input until the user provides a valid input
 def get_string(prompt: str,L: list) -> str:
     ...
                 return x
