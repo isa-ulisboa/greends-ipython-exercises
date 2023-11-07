@@ -5,6 +5,8 @@ lat_min= 38.4
 lat_max= 38.7
 lon_min= -8.6
 lon_max= -8.1
+coef_lat=111120 # 1 degree of latitude corresponds approx to 111120 meters
+coef_lon=86672 # 1 degree of longitude corresponds approx to 86672 meters at this latitude
 
 def get_coordinates(N: int) -> list:
     L=[]
