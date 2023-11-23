@@ -10,23 +10,27 @@ TYPES = {"fighter": FIGHTER, "thief": THIEF, "mage": MAGE}
 
 
 class Character:
-    _health = 0 # arbitrary value
+    """ _health = 0 # arbitrary value
     _attack = 0
-    _dodge = 0
+    _dodge = 0 """
 
     def __init__(self, char_type):
         self._char_type = char_type
-        self._assign_attributes()
-
-    def __str__(self):
-        return self._char_type
-
-    def _assign_attributes(self):
+        #self._assign_attributes()
         type_dict = TYPES[self._char_type]
         self._health = type_dict["health"]
         self._attack = type_dict["attack"]
         self._dodge = type_dict["dodge"]
 
+    def __str__(self):
+        return self._char_type
+    """ 
+        def _assign_attributes(self):
+            type_dict = TYPES[self._char_type]
+            self._health = type_dict["health"]
+            self._attack = type_dict["attack"]
+            self._dodge = type_dict["dodge"]
+    """
     def attack(self):
         return self._attack
 
@@ -51,12 +55,19 @@ class Character:
 def character_fight(type_1, type_2):
     character_1 = Character(type_1)
     character_2 = Character(type_2)
-    coin_toss = random.randint(0, 1)
-    if coin_toss == 0:
-        first, second = [character_1, character_2]
-    else:
-        first, second = [character_2, character_1]
-
+    # choose who attacks first
+    first, second = character_1, character_2
+    if random.choice([0,1]):
+        first, second = character_2, character_1
+    """ 
+        coin_toss = random.randint(0, 1)
+        if coin_toss == 0:
+            #first, second = [character_1, character_2]
+            first, second = character_1, character_2
+        else:
+            first, second = character_2, character_1
+    """    
+    # battle until one of the characters die; the winner exits the fight
     while True:
         if attack_character(first, second):
             return str(first)
